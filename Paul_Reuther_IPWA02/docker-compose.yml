@@ -1,0 +1,15 @@
+networks:
+
+  t3lls_gate--app_net:
+    external: true
+
+services:
+
+  hero-to-zero:
+    build:
+      context: ./IPWA02-01_20022025_4238971/LikeHeroToZero
+      dockerfile: Dockerfile
+    restart: always
+    networks: # internal port 8080
+      - t3lls_gate--app_net
+    stop_grace_period: 0s
